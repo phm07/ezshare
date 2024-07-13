@@ -17,43 +17,55 @@ export async function languageExtensionFromString(
     lang: string,
 ): Promise<Extension | null> {
     switch (lang) {
-        case "YAML":
+        case "YAML": {
             const { yaml } = await import("@codemirror/lang-yaml");
             return yaml();
-        case "Javascript":
+        }
+        case "Javascript": {
             const { javascript } = await import("@codemirror/lang-javascript");
             return javascript({ jsx: true });
-        case "JSON":
+        }
+        case "JSON": {
             const { json } = await import("@codemirror/lang-json");
             return json();
-        case "HTML":
+        }
+        case "HTML": {
             const { html } = await import("@codemirror/lang-html");
             return html();
-        case "Markdown":
+        }
+        case "Markdown": {
             const { markdown } = await import("@codemirror/lang-markdown");
             return markdown();
-        case "CSS":
+        }
+        case "CSS": {
             const { css } = await import("@codemirror/lang-css");
             return css();
-        case "Go":
+        }
+        case "Go": {
             const { go } = await import("@codemirror/lang-go");
             return go();
+        }
         case "C":
-        case "C++":
+        case "C++": {
             const { cpp } = await import("@codemirror/lang-cpp");
             return cpp();
-        case "Java":
+        }
+        case "Java": {
             const { java } = await import("@codemirror/lang-java");
             return java();
-        case "Rust":
+        }
+        case "Rust": {
             const { rust } = await import("@codemirror/lang-rust");
             return rust();
-        case "Python":
+        }
+        case "Python": {
             const { python } = await import("@codemirror/lang-python");
             return python();
-        case "PHP":
+        }
+        case "PHP": {
             const { php } = await import("@codemirror/lang-php");
             return php();
+        }
     }
     return null;
 }

@@ -91,11 +91,11 @@ function View({ fileKey }: { fileKey: string }) {
 
     const showRaw = useCallback(() => {
         window.location.href = fileUrl;
-    }, []);
+    }, [fileUrl]);
 
     const edit = useCallback(() => {
         window.location.href = "/?edit=" + fileKey;
-    }, []);
+    }, [fileKey]);
 
     const createNew = useCallback(() => {
         window.location.pathname = "/";
@@ -112,7 +112,7 @@ function View({ fileKey }: { fileKey: string }) {
                     window.location.href = "/";
                 });
         }
-    }, [meta]);
+    }, [meta, fileKey]);
 
     useEffect(() => {
         if (meta && meta.mime_type.startsWith("text/")) {
@@ -136,7 +136,7 @@ function View({ fileKey }: { fileKey: string }) {
                     // 404
                 });
         }
-    }, [meta]);
+    }, [meta, fileUrl]);
 
     if (!meta) {
         // loading

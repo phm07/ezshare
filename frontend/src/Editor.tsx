@@ -89,7 +89,7 @@ function SaveDialog({
         } else {
             setExpiry("never");
         }
-    }, [expires, expireDays, expireHours, expireMinutes]);
+    }, [expires, expireDays, expireHours, expireMinutes, setExpiry]);
 
     return (
         <div>
@@ -269,7 +269,7 @@ function Editor() {
         return () => {
             document.removeEventListener("keydown", keydownListener);
         };
-    }, [isSaving, code]);
+    }, [isSaving, closeDialog, code]);
 
     return (
         <main>
