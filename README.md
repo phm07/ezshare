@@ -40,3 +40,10 @@ ezShare is configured using environment variables. Below is an overview of all a
 | `EZSHARE_STORAGE`          | `local`        | Storage type to use.<br/> Available values: `local`    |
 | `EZSHARE_LOCALSTORAGE_DIR` | `localstorage` | Where to store objects if local storage is used.       |
 
+# Roadmap
+
+- [ ] Add support for PostgreSQL/MySQL storage backends
+- [ ] Add support for S3 storage backend
+- [ ] Allow configuring max file size
+- [ ] Allow configuring max expiry time
+- [ ] Add support for password protection
