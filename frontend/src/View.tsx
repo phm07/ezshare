@@ -121,7 +121,10 @@ function View({ fileKey }: { fileKey: string }) {
                     responseType: "text",
                 })
                 .then((res) => {
-                    const code = res.data;
+                    let code = res.data;
+                    if (!code.endsWith("\n")) {
+                        code += "\n";
+                    }
                     setCode(code);
                     const detectedLanguage = flourite(code);
                     languageExtensionFromString(detectedLanguage.language).then(
@@ -223,6 +226,7 @@ function View({ fileKey }: { fileKey: string }) {
                 <CodeMirror
                     value={code}
                     editable={false}
+                    readOnly={true}
                     extensions={extensions}
                     theme={isDarkMode ? githubDarkCustom : githubLight}
                 />
