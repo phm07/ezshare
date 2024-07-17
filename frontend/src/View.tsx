@@ -10,7 +10,7 @@ import {
     languageExtensionFromString,
     Metadata,
 } from "./common.ts";
-import CodeMirror from "@uiw/react-codemirror";
+import CodeMirror, { EditorView } from "@uiw/react-codemirror";
 import flourite from "flourite";
 import { Extension } from "@uiw/react-codemirror";
 import { useDarkMode } from "./common.ts";
@@ -211,14 +211,19 @@ function View({ fileKey }: { fileKey: string }) {
     }
 
     if (meta.mime_type.startsWith("text/")) {
+        const extensions = [
+            EditorView.contentAttributes.of({ tabindex: "0" }), // fixes select all
+        ];
+        if (language) {
+            extensions.push(language);
+        }
         return (
             <main>
                 <ButtonBox onNew={createNew} onEdit={edit} onRaw={showRaw} />
                 <CodeMirror
                     value={code}
                     editable={false}
-                    readOnly={true}
-                    extensions={language ? [language] : []}
+                    extensions={extensions}
                     theme={isDarkMode ? githubDarkCustom : githubLight}
                 />
             </main>
