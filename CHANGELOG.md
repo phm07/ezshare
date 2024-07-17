@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.2](https://github.com/phm07/ezshare/compare/v1.0.1...v1.0.2) (2024-07-17)
+
+
+### Bug Fixes
+
+* force ending newline, add back readOnly ([#28](https://github.com/phm07/ezshare/issues/28)) ([d9e1ef1](https://github.com/phm07/ezshare/commit/d9e1ef1fe15ba93b411126a7c561504623b712dd))
+
 ## [1.0.1](https://github.com/phm07/ezshare/compare/v1.0.0...v1.0.1) (2024-07-17)
 
 
